@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Borrow</class>
+ <widget class="QDialog" name="Borrow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>430</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Borrow</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="bookCode_label">
+     <property name="text">
+      <string>책 코드</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="bookCode_lineEdit"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="borrow_button">
+     <property name="text">
+      <string>대출</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="idInfo_label">
+     <property name="text">
+      <string>대출 목록</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QTableWidget" name="idInfo_tableWidget">
+     <property name="editTriggers">
+      <set>QAbstractItemView::NoEditTriggers</set>
+     </property>
+     <property name="selectionBehavior">
+      <enum>QAbstractItemView::SelectRows</enum>
+     </property>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <row>
+      <property name="text">
+       <string/>
+      </property>
+     </row>
+     <column>
+      <property name="text">
+       <string>책 코드</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>제목</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>만기일</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>연장 여부</string>
+      </property>
+     </column>
+     <item row="0" column="2">
+      <property name="text">
+       <string/>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="returnBook_button">
+     <property name="text">
+      <string>반납</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="extension_button">
+     <property name="text">
+      <string>연장</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="leave_button">
+     <property name="text">
+      <string>종료</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>borrow_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Borrow</receiver>
+   <slot>borrowBook()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>142</x>
+     <y>62</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>179</x>
+     <y>80</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>extension_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Borrow</receiver>
+   <slot>extensionBook()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>45</x>
+     <y>458</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>64</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>returnBook_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Borrow</receiver>
+   <slot>returnBook()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>161</x>
+     <y>423</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>166</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>leave_button</sender>
+   <signal>clicked()</signal>
+   <receiver>Borrow</receiver>
+   <slot>leave()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>255</x>
+     <y>478</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>261</x>
+     <y>407</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>borrow_button</sender>
+   <signal>clicked()</signal>
+   <receiver>idInfo_tableWidget</receiver>
+   <slot>reset()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>287</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>292</x>
+     <y>115</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>borrowBook()</slot>
+  <slot>extensionBook()</slot>
+  <slot>returnBook()</slot>
+  <slot>leave()</slot>
+ </slots>
+</ui>
